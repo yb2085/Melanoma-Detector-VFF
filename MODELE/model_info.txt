@@ -1,0 +1,13 @@
+=== Model Info ===
+Model: efficientformer_l1
+Date: 2025-05-01 06:38:11.262664
+Device: cuda
+Classes: 2
+Epochs: 10
+Best Val Acc: 0.9572
+
+=== Recharger le modèle ===
+import timm
+model = timm.create_model('efficientformer_l1', pretrained=False, num_classes=2)
+model.load_state_dict(torch.load('best_model_efficientformer.pth'))
+model.eval()
